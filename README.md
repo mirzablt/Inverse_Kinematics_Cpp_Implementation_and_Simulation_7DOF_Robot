@@ -36,7 +36,8 @@ Funkcija cilja izrazava  mjeru odstupanja trenutne pozicije i orijentacije vrha 
 
 ## Datoteke
 
-Algoritam inverzne kinematike je implementiran u obliku S-funkcije koja je kao blok inverzne kinematike primijenjena u simulaciji koja je rađena u Simulink-u. U mapi Libraries u bloku S-funkcije su navedene implemetirane biblioteke:
+Algoritam inverzne kinematike je implementiran u obliku S-funkcije koja je kao blok inverzne kinematike primijenjena u simulaciji koja je rađena u Simulink-u.
+- U mapi Libraries u bloku S-funkcije su navedene implemetirane biblioteke:
 - `BFGSAlgorithm.cpp`: U ovom fajlu se nalazi izvorni  kod koji predstavlja implementiciju BFGS optimizacijskog algoritma, funkcije cilja i drugih funkcija koje su pozivane u navedenim implementacijama i koje su detaljno opisane u komentaru koda koji se nalazi u navedenom fajlu.  
  - `LineSearch.cpp`: Linijsko pretrazivanje je jedan od koraka  u BFGS algoritmu. U ovom fajlu je implementiran algoritam linijskog pretraživanja kao i funkcije koje se pozivaju u ovom algoritmu.  Ove funkcije su opisane u komentaru koda. 
   - `MatrixLibrary.cpp`: U ovom fajlu su implementirane operacije sa matricama i vektorima kao i funkcije za inicijalizaciju istih.
