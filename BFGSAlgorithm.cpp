@@ -71,11 +71,12 @@ struct Variable direct_cinematics_matrix( struct Variable A){
 	 } else {
          
 	 	if (A.X[0][0] - A.X[1][1] >h && A.X[0][0] - A.X[2][2] > h){
+			
 	 		double s = 2.0 * sqrt(1.0 + A.X[0][0] - A.X[1][1] - A.X[2][2]);
 	 		 B.s = (A.X[2][1] - A.X[1][2]) / s;
-	         B.v[0] = 0.25 * s;
-	         B.v[1] = (A.X[0][1] + A.X[1][0]) / s;
-	         B.v[2] = (A.X[0][2] + A.X[2][0]) / s;
+		         B.v[0] = 0.25 * s;
+		         B.v[1] = (A.X[0][1] + A.X[1][0]) / s;
+		         B.v[2] = (A.X[0][2] + A.X[2][0]) / s;
              
 		 } else if (A.X[1][1] - A.X[2][2]>h){
              
