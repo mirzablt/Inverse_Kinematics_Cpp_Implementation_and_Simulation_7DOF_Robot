@@ -8,13 +8,13 @@ Ovaj repozitorij sadrži implementaciju rješenja problema inverzne kinematike r
 - [Ulazi i izlazi algoritma](#ulazi-i-izlazi-algoritma)
 - [Datoteke](#datoteke)
 - [Simulacija](#simulacija)
-- [Doprinos](#doprinos)
 - [Licenca](#licenca)
 
 
 ## Uvod
 Svaki zadatak koji robot obavlja može se svesti na ispravno pozicioniranje i orijentaciju vrha manipulatora, dok izvršenje zadatka obavljaju aktuatori koji pokreću zglobove pri tome mijenjajući varijable zglobova. Direktna kinematika robota izražava ovisnost pozicije i orijentacije  vrha manipulatora od  varijabli zglobova. Inverzna kinematika je postupak određivanja varijabli zglobova robotskog manipulatora na osnovu poznavanja željene pozicije i orijentacije vrha manipulatora. Problem je vrlo nelinearan, što otežava tradicionalna analitička rješenja.
 Za 7-DOF (7 stepeni slobode kretanja) redudantni robotski manipulator rješenje ovog problema nije jedinstveno (u smislu postojanja više konfiguracija zgolobova robota koje daju istu poziciju i orijentaciju vrha manipulatora), što predstavlja dodatni izazov. Ovaj projekt koristi BFGS optimizacijski pristup, kako bi iterativno riješio problem inverzne kinematike. Problem inverzne kinematike je tretiran kao problem nelinearne optimizacije bez ograničenja za varijable, čime je omogućena direktna primjena BFGS metode.
+
 
 ## Algoritam
 U inverznoj kinematici, cilj je odrediti zglobne varijable robotskog manipulatora koji rezultiraju željenom pozicijom i orijentacijom vrha manipulatora. Ovaj problem se može postaviti kao optimizacijski problem, gdje je cilj minimizirati grešku između željene pozicije (i orijentacije) i stvarne pozicije (i orijentacije) vrha manipulatora.  Ova formulacija omogućava rješavanje problema inverzne kinematike koristeći optimizacijske tehnike poput BFGS algoritma, koji iterativno minimizira grešku i konvergira ka rješenju koje daje konfiguraciju zglobova za željenu poziciju i orijentaciju. U terminima optimizacije greška pozicije i orijentacije se može izraziti kao funkcija cilja (ili kriterij optimalnosti). BFGS algoritam, kao i algoritam jednodimenzionalnog pretraživana kojeg on koristi, su detaljno opisani u fajlu Documentation.
@@ -35,6 +35,7 @@ Funkcija cilja u sebe ukljucuje:
 - **Izlazi**:  
   - `Config`: Vektor zglobnih varijabli. Predstavlja rezultat racunanja implementiranog algoritma inverzne kinematike. To su varijable zglobova koji omogućavaju postizanje željene pozicije i orijentacije vrha manipulatora.  
   - `Criterion Value`: Vrijednost funkcije kriterija u svakoj tački zadane trajektorije. Izrazava mjeru odstupanja postignute pozicije i orijentacije vrha manipulatora od njegove zeljene pozicije i orijentacije.
+  - 
 
 ## Datoteke
 
