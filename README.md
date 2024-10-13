@@ -39,17 +39,17 @@ Funkcija cilja u sebe ukljucuje:
 ## Datoteke
 
 Algoritam inverzne kinematike je implementiran u obliku S-funkcije koja je kao blok inverzne kinematike primijenjena u simulaciji koja je rađena u Simulink-u.
-1. U mapi Libraries u bloku S-funkcije su navedene implemetirane biblioteke:
+- U mapi Libraries u bloku S-funkcije su navedene implemetirane biblioteke:
   - `BFGSAlgorithm.cpp`: U ovom fajlu se nalazi izvorni  kod koji predstavlja implementiciju BFGS optimizacijskog algoritma, funkcije cilja i drugih funkcija koje su pozivane u navedenim implementacijama i koje su       detaljno opisane u komentaru koda koji se nalazi u navedenom fajlu.  
-   - `LineSearch.cpp`: Linijsko pretrazivanje je jedan od koraka  u BFGS algoritmu. U ovom fajlu je implementiran algoritam linijskog pretraživanja kao i funkcije koje se pozivaju u ovom algoritmu.  Ove funkcije su       opisane u komentaru koda. 
-   - `MatrixLibrary.cpp`: U ovom fajlu su implementirane operacije sa matricama i vektorima kao i funkcije za inicijalizaciju istih.
-   - Header datoteke: `BFGSAlgorithm.h`, `LineSearch.h`, `MatrixLibrary.h`.
-     
-2. `Inverse_Kinematics_BFGS_wrapper.cpp`:    U ovom fajlu su zadani DH parametri robota i pozvane su funkcije implementirane u navedenim bibliotekama.
-3. `Robot_Params_and_Waypoints_Data.m`: Pored učitavanja parametara modela robota korištenog u simulaciji, izvršavanjem ovog fajla učitavaju se koordinate putnih tačaka, orijentacija vrha manipulatora u putnim tačkama, vremena pristizanja vrha manipulatora u putne tačke, komponente vektora brzine i ubrzanja u putnim tačkama.
- 4. `Robot_IK_Simulation.slx`: U ovom fajlu se implementirana simulacija robota u obluku Simulink blok dijagrama. Pored bloka S-funkcije u kojem je implementiran algoritam inverzne kinematike, u blok dijagramu se nalaze blokovi: Polynomial trajectory – koji na osnovu zadanih putnih tačaka generira trajektoriju; Rotation trajectory- koji za zadanu orijentaciju u  putnim tačkama generira orijentaciju vrha manipulatora duž trajektorije; Visualize Robot-koji omogučava 3D vizualizaciju robota i zadane trajektorije.
-5. `Documentation.pdf`: Ovaj projekat je rađen kao seminarski rad iz predmeta sa četvrte godine Elektrotehničkog fakulteta u Sarajevu. U ovom fajlu je dokumentovan ovaj rad. U njemu su opisani tehnički detalji koji se tiču kinematike robota  i algoritma optimizacije. Opisana je simulacija i rezultati simulacije. U komentaru koda se pozivalo na numerisane dijelove ovog dokumenta. Kod koji je dokumentovan u ovom fajlu je dodatno dorađen u smislu njegove preglednosti a komentar koda je opširniji i detaljniji.
-6. `trajExampleUtils.slx` i `visualizeRobot.m`: se koriste u vizualizaciji robota. Ovi fajlovi su preuzeti sagithub.com/ mathworks-robotics/trajectory-planning-robot-manipulators
+  - `LineSearch.cpp`: Linijsko pretrazivanje je jedan od koraka  u BFGS algoritmu. U ovom fajlu je implementiran algoritam linijskog pretraživanja kao i funkcije koje se pozivaju u ovom algoritmu.  Ove funkcije su       opisane u komentaru koda. 
+  - `MatrixLibrary.cpp`: U ovom fajlu su implementirane operacije sa matricama i vektorima kao i funkcije za inicijalizaciju istih.
+  
+- Header datoteke: `BFGSAlgorithm.h`, `LineSearch.h`, `MatrixLibrary.h`.
+- `Inverse_Kinematics_BFGS_wrapper.cpp`:    U ovom fajlu su zadani DH parametri robota i pozvane su funkcije implementirane u navedenim bibliotekama.
+- `Robot_Params_and_Waypoints_Data.m`: Pored učitavanja parametara modela robota korištenog u simulaciji, izvršavanjem ovog fajla učitavaju se koordinate putnih tačaka, orijentacija vrha manipulatora u putnim tačkama, vremena pristizanja vrha manipulatora u putne tačke, komponente vektora brzine i ubrzanja u putnim tačkama.
+- `Robot_IK_Simulation.slx`: U ovom fajlu se implementirana simulacija robota u obluku Simulink blok dijagrama. Pored bloka S-funkcije u kojem je implementiran algoritam inverzne kinematike, u blok dijagramu se nalaze blokovi: Polynomial trajectory – koji na osnovu zadanih putnih tačaka generira trajektoriju; Rotation trajectory- koji za zadanu orijentaciju u  putnim tačkama generira orijentaciju vrha manipulatora duž trajektorije; Visualize Robot-koji omogučava 3D vizualizaciju robota i zadane trajektorije.
+- `Documentation.pdf`: Ovaj projekat je rađen kao seminarski rad iz predmeta sa četvrte godine Elektrotehničkog fakulteta u Sarajevu. U ovom fajlu je dokumentovan ovaj rad. U njemu su opisani tehnički detalji koji se tiču kinematike robota  i algoritma optimizacije. Opisana je simulacija i rezultati simulacije. U komentaru koda se pozivalo na numerisane dijelove ovog dokumenta. Kod koji je dokumentovan u ovom fajlu je dodatno dorađen u smislu njegove preglednosti a komentar koda je opširniji i detaljniji.
+- `trajExampleUtils.slx` i `visualizeRobot.m`: se koriste u vizualizaciji robota. Ovi fajlovi su preuzeti sagithub.com/ mathworks-robotics/trajectory-planning-robot-manipulators
 
 1. **Libraries** (sadrži C++ implementacije):  
    - `BFGSAlgorithm.cpp`: Implementacija BFGS algoritma i funkcije cilja.  
