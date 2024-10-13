@@ -5,7 +5,7 @@ Ovaj repozitorij sadrži implementaciju rješenja problema inverzne kinematike r
 ## Sadržaj
 - [Uvod](#uvod)
 - [Algoritam](#algoritam)
-  - [Ulazi i izlazi algoritma](#ulazi-i-izlazi-algoritma)
+- [Ulazi i izlazi algoritma](#ulazi-i-izlazi-algoritma)
 - [Datoteke](#datoteke)
 - [Simulacija](#simulacija)
 - [Licenca](#licenca)
@@ -19,8 +19,7 @@ Za 7-DOF (7 stepeni slobode kretanja) redudantni robotski manipulator rješenje 
 ## Algoritam
 U inverznoj kinematici, cilj je odrediti zglobne varijable robotskog manipulatora koji rezultiraju željenom pozicijom i orijentacijom vrha manipulatora. Ovaj problem se može postaviti kao optimizacijski problem, gdje je cilj minimizirati grešku između željene pozicije (i orijentacije) i stvarne pozicije (i orijentacije) vrha manipulatora.  Ova formulacija omogućava rješavanje problema inverzne kinematike koristeći optimizacijske tehnike poput BFGS algoritma, koji iterativno minimizira grešku i konvergira ka rješenju koje daje konfiguraciju zglobova za željenu poziciju i orijentaciju. U terminima optimizacije greška pozicije i orijentacije se može izraziti kao funkcija cilja (ili kriterij optimalnosti). BFGS algoritam, kao i algoritam jednodimenzionalnog pretraživana kojeg on koristi, su detaljno opisani u fajlu [Documentation](./Documentation.pdf). 
 
-Funkcija cilja izrazava  mjeru odstupanja trenutne pozicije i orijentacije vrha manipulatora od njegove zeljene pozicije i orijentacije.
-
+Funkcija cilja izrazava  mjeru odstupanja trenutne pozicije i orijentacije vrha manipulatora od njegove zeljene pozicije i orijentacije.  
 Funkcija cilja u sebe ukljucuje:
 
 - **Grešku pozicije**: izražava rastojanje trenutne pozicije vrha manipulator (koji je funkcija zglobnih varijabli) od zeljene pozicije;
@@ -28,7 +27,7 @@ Funkcija cilja u sebe ukljucuje:
 
 Željena pozicija i željena orijentacija vrha manipulatora se dobiju na osnovu matrice homogene transformacije i ova matrica je  ulaz algoritma. Trenutna poz. i orij. se dobiju iz jednacine direktne  kinematike, koja se dobije na osnovu dh parametara robota (koje cine  i izglobne varijable). U funkciji cilja, zglobne varijable predstavljaju problemske varijable algoritma optimizacije a vektor zglobnih varijabli je izlaz algoritma inverzne kinematike.
 
-### Ulazi i izlazi algoritma
+## Ulazi i izlazi algoritma
 
 - **Ulazi**:  
   - `Pose`: Željena pozicija i orijentacija vrha manipulatora. Data je kao 4x4 matrica homogene transformacije. Ovu matricu generira blok planiranja trajektorije (koji nije obuhvacen ovim radom); 
